@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Z, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Giphy</title>
+    <style type = "text/css">
+    body{
+        background-image: url(./images/background.jpg);
+    }
+    h1 {
+        color: blue;
+        text-align: center;
+        font-family: 'Pacifico', cursive;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class = "character"> -->
+            <h1>Gif-kids-cartoon</h1>
+            <div id = "buttons-view"></div>
+            <form id="form">
+                <label for="character-input">Add a Character, Yo!</label>
+                <input type="text" id="character-input">
+                <br>
+                <!--Button triggers new gifs to be added-->
+                <input id="add-character" type="submit" value="Add a Character, Yo!" >
+            </form>
+<!--Gif will b here-->
+<div id = "gifs-appear-here" data-state="still"></div>
+<!-- </div> -->
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./gif.js"></script>
+
+</body>
+</html>
