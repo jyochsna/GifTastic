@@ -14,41 +14,47 @@ $(document).ready(function(){
     }
     renderButtons();
    $(document).on("click", ".cartoons", function(){
-       var list = $(this).html();
+       var list = $(this).attr("data-name");
        console.log(list);
 
-       var APIKey = "4HrdLBrV2OKr2A8OuTf2IN66oKppBvNS";
-       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + list + APIKey;
+       var APIKey = "tOHeh9c4S6r0SpoItBGtPWKCgF84HLRN";
+       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + list + "&api_key=" + APIKey;
 
        $.ajax({
            url: queryURL, 
            method: "GET"
        })
-.done(function(response){
+.then(function(response){
     var results = response.data;
+    console.log(response)
     $("#gifs-appear-here").empty();
      for (var j = 0; j<results.length; j++){
-         var imageDiv = $("<div>");
+         var cartoonDiv = $("<div>");
          var imageView = results[j].images.fixed_height.url;
          var still = results[j].images.fixed_height_still.url;
          //console.log(imageView);
-         var  = $("<img>").attr("src", still).attr('data-animate', imageView).attr('data-still', still);
+         var cartoonImage = $("<img>").attr("src", still).attr("data-animate", imageView).attr("data-state", "still").attr("data-still", still).addClass("cartoons-image");
+        cartoonDiv.append(cartoonImage);
+        $("#gifs-appear-here").append(cartoonDiv);
 
      }
+
 })
+
         
+   })
+   $(document).on("click", ".cartoons-image", function(){
+       var state = $(this).attr("data-state");
+       if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+
    })
       
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
     })
-    .then(function(response){
-        console.log(response.data);
-        var results = response.data;
-         for (var i=0; i<results.length; i++);
-         var gifImage = $()
-
-    })
-    }
+    
