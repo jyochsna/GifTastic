@@ -1,0 +1,17 @@
+body{
+    background-image: url(./images/background.jpg);
+}
+h1 {
+    color: blue;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    margin-top: 20px;
+}
+#form{
+    float:right;
+    padding:10px;
+}
+body{
+    font-family: cursive;
+}
+    

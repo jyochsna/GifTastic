@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var topics = ["peppapig", "caillou"];
+    var topics = ["peppapig", "caillou", "Bugs Bunny", "Paw Patrol", "Tweety", "Dora Explorer", "Unicorn", "Minions", "Charlie Brown"];
 
     function renderButtons(){
         $("#buttons-view").empty();
@@ -54,7 +54,19 @@ $(document).ready(function(){
       }
 
    })
+   $(document).on("click", "#add-character", function(){
+       if ($("#character-input").val().trim() == ""){
+           alert ("please add character");
+       }
+       else{
+           var list = $("#character-input").val().trim();
+           topics.push(list);
+           $("#character-input").val("");
+           renderButtons();
+           return false;
+       }
+   });
       
 
-    })
+    });
     
