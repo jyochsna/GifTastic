@@ -37,7 +37,12 @@ $(document).ready(function(){
         cartoonDiv.append(cartoonImage);
         $("#gifs-appear-here").append(cartoonDiv);
 
+       var rating = response.data[j].rating;
+       var pRating = $("<p>").text("Rating: " + rating);
+       $("#gifs-appear-here").append(pRating);
+
      }
+    
 
 })
 

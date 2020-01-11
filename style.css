@@ -14,4 +14,9 @@ h1 {
 body{
     font-family: cursive;
 }
-    
+#add-character{
+    float: right;
+}
+#add-character:hover{
+    background-color: cyan;
+}
